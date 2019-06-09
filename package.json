@@ -1,0 +1,23 @@
+{
+  "name": "styled-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack",
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.js{,on}\" \"**/*.md\""
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3"
+  }
+}
