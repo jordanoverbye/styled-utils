@@ -1,6 +1,6 @@
 # Styled Utils
 
-An experimental, small CSS-in-JS library which outputs to utility classes. Each class is generated at run-time and cached to avoid CSS bloat.
+An experimental, themeable, small CSS-in-JS library which outputs to utility classes. Each class is generated at run-time and cached to avoid CSS bloat.
 
 ## Usage
 
