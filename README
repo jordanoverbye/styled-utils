@@ -16,7 +16,7 @@ const classes = cn({
 
 ## Server side
 
-@TODO
+TODO
 
 ## React
 
@@ -29,7 +29,8 @@ const Heading = styled('h1')(props => ({
   color: props.active ? "primary.500" : "black",
   fontSize: "6xl",
 })
-...
+
+
 
 render() {
   return <Heading active={isActive}>Hello World</Heading>
@@ -52,4 +53,4 @@ const App = () => (
 
 ### Theme Provider
 
-@TODO
+TODO
