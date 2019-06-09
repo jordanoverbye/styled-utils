@@ -13,7 +13,7 @@ const classes = cn({
   fontSize: "6xl",
 })
 
-// display-flex color-primary-500 font-size-6xl
+=> display-flex color-primary-500 font-size-6xl
 ```
 
 ## React
@@ -54,7 +54,7 @@ const App = props => (
   </h1>
 )
 
-// <div className="color-primary-500 font-size-6xl">Hello World</div>
+=> <div className="color-primary-500 font-size-6xl">Hello World</div>
 ```
 
 ## API
