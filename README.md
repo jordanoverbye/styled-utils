@@ -54,14 +54,39 @@ const App = props => (
   </h1>
 )
 
-=> <div className="color-primary-500 font-size-6xl">Hello World</div>
+=> <h1 className="color-primary-500 font-size-6xl">Hello World</div>
 ```
-
-## API
-
-TODO
 
 ### Theme Provider
 
-TODO
 
+```
+import { ThemeContext } from "styled-utils/react";
+
+const App = props => (
+  <ThemeContext.Provider value={theme}>
+    <ExampleComponent />
+  </ThemeContext.Provider>
+)
+```
+
+### Media Queries
+
+Mobile first media queries
+
+```
+/** @jsx jsx **/
+import { jsx } from 'styled-utils/react'
+
+const App = props => (
+  <div 
+    tw={{
+      display: ['flex', 'flex-inline', 'block', 'none', 'flex']
+    }}
+  >
+    Hello World
+  </div>
+)
+
+=> <h1 className="display-flex sm:display-flex-inline md:display-block lg:display-none xl:display-flex">Hello World</div>
+```
