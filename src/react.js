@@ -4,6 +4,21 @@ import { cn } from "./";
 
 const h = React.createElement;
 
+export let ThemeContext = React.createContext({});
+
+let render = (theme, props, cache, ref, type) => {
+  const newProps = {};
+  for (let key in props) {
+    if (hasOwnProperty.call(props, key) && key !== "tw") {
+      newProps[key] = props[key];
+    }
+  }
+  newProps.ref = ref;
+  newProps.className = cn(props.tw, theme);
+
+  return React.createElement(type, newProps);
+};
+
 function styled(C) {
   return (...args) => {
     const Comp = (props, context = {}) => {
@@ -45,11 +60,11 @@ function jsx(type, props) {
     return h.apply(undefined, args);
   }
 
-  const tw = props.tw;
+  let Component = (props, cache, ref) => {
+    return <ThemeContext.Consumer>{theme => render(theme, props, cache, ref, type)}</ThemeContext.Consumer>;
+  };
 
-  args[1].className = cn(tw);
-  args[1].tw = null;
-
+  args[0] = Component;
   return h.apply(undefined, args);
 }
 

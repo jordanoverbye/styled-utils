@@ -20,7 +20,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/env"],
-            plugins: ["@babel/plugin-proposal-object-rest-spread"]
+            plugins: ["@babel/plugin-proposal-object-rest-spread", "@babel/plugin-transform-react-jsx"]
           }
         }
       }

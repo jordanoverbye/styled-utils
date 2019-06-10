@@ -1,5 +1,4 @@
 import dynamicStyles from "./dynamic-styles";
-import theme from "./theme";
 import _get from "./get";
 
 let cache = {};
@@ -32,8 +31,6 @@ const css = (selector, styleString) => {
 };
 
 const objectToCss = (obj = {}) => {
-  console.log(objectToCss);
-
   const keys = Object.keys(obj);
   if (keys.length === 0) return "";
   return keys
@@ -58,13 +55,11 @@ const camelCaseToKebabCase = string => {
   return string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 };
 
-const mq = (key, value) => {
+const mq = (key, value, theme) => {
   const { breakpoints } = theme;
-
   if (!breakpoints) {
     throw new Error("No breakpoints in styled-utils theme file");
   }
-
   return Object.keys(breakpoints)
     .map((bp, index) => {
       const v = value[index];
@@ -84,7 +79,7 @@ const mq = (key, value) => {
     .join(" ");
 };
 
-function cn(obj) {
+function cn(obj, theme) {
   const entries = Object.entries(obj);
   return entries
     .map(entry => {
@@ -93,7 +88,7 @@ function cn(obj) {
       if (typeof value === Number) {
         value = String();
       } else if (Array.isArray(value)) {
-        return mq(key, value);
+        return mq(key, value, theme);
       }
 
       // This value comes from the theme
